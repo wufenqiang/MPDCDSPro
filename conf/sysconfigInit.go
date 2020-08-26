@@ -20,7 +20,6 @@ func init() {
 		}
 		dir = filepath.Dir(dir)
 	}
-
 	//fmt.Println(dir)
 
 	conffile := dir + "/config.json"
