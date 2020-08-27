@@ -9,13 +9,13 @@ import (
 
 var Sysconfig = &sysconfig{}
 
-func ReadConf(conffile string) {
+func ReadConf(conffile string, thesysconf interface{}) {
 	//指定对应的json配置文件
 	b, err := ioutil.ReadFile(conffile)
 	if err != nil {
 		panic(conffile + "Sys config read err")
 	}
-	err = jsoniter.Unmarshal(b, Sysconfig)
+	err = jsoniter.Unmarshal(b, thesysconf)
 	if err != nil {
 		panic(err)
 	}

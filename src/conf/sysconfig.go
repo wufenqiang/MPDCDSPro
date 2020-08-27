@@ -13,7 +13,7 @@ type sysconfig struct {
 func init() {
 	dir := LocalProjectPath()
 	conffile := dir + "/config.json"
-	ReadConf(conffile)
+	ReadConf(conffile, Sysconfig)
 }
 
 const ProjectName = "MPDCDSPro"
