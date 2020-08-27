@@ -2,7 +2,6 @@
   "ThriftHost":"127.0.0.1",
   "ThriftPort": "19090",
 
-  "LoggerPath": "D:/tmp/logs/go/",
   "LoggerLevel": "info",
 
   "ShadeInLog":true

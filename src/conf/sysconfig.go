@@ -11,7 +11,6 @@ type sysconfig struct {
 	ThriftPort string `json:"ThriftPort"`
 
 	//日志存储地址
-	LoggerPath  string `json:"LoggerPath"`
 	LoggerLevel string `json:"LoggerLevel"`
 
 	//日志中显示相关密文
