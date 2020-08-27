@@ -18,4 +18,4 @@ func init() {
 	ReadConf(conffile, Sysconfig)
 }
 
-const ProjectName = "MPDCDSPro"
+const ProjectNamePro = "MPDCDSPro"

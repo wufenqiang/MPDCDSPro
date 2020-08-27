@@ -9,7 +9,7 @@ var zapLogger *zap.Logger
 
 //初始化
 func init() {
-	logger := LoggerConfiger(conf.ProjectName, conf.Sysconfig.LoggerLevel)
+	logger := LoggerConfiger(conf.ProjectNamePro, conf.Sysconfig.LoggerLevel)
 	zapLogger = logger
 }
 
