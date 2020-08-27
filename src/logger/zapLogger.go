@@ -2,7 +2,6 @@ package logger
 
 import (
 	"github.com/wufenqiang/MPDCDSPro/src/conf"
-	"github.com/wufenqiang/MPDCDSPro/src/utils"
 	"go.uber.org/zap"
 )
 
@@ -10,10 +9,7 @@ var zapLogger *zap.Logger
 
 //初始化
 func init() {
-	logger := utils.LoggerConfiger(conf.ProjectName, conf.Sysconfig.LoggerLevel)
-
-	//logger.Info("Logger init......")
-
+	logger := LoggerConfiger(conf.ProjectName, conf.Sysconfig.LoggerLevel)
 	zapLogger = logger
 }
 
