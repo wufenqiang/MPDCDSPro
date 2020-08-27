@@ -3,11 +3,18 @@ package client
 import (
 	"context"
 	"fmt"
-	"github.com/wufenqiang/MPDCDSPro/src/logger"
+	"git.apache.org/thrift.git/lib/go/thrift"
+
 	"github.com/wufenqiang/MPDCDSPro/src/thrift/MPDCDS_BackendService"
+	"net"
 	"testing"
 	"time"
 )
+
+func Connect() (*MPDCDS_BackendService.MPDCDS_BackendServiceClient, thrift.TTransport) {
+	thrifthostport := net.JoinHostPort("127.0.0.1", "19090")
+	return ConnectHostPort(thrifthostport)
+}
 
 /**需先启动MPDCDS_
  */
@@ -18,9 +25,9 @@ func TestAuth(t *testing.T) {
 	password := "123456"
 	res, err := tClient.Auth(context.Background(), user, password)
 	if err != nil {
-		logger.GetLogger().Error(err.Error())
+		fmt.Println(err.Error())
 	}
-	logger.GetLogger().Info(fmt.Sprintf(res.String()))
+	fmt.Println(fmt.Sprintf(res.String()))
 	tTransport.Close()
 }
 
@@ -30,9 +37,9 @@ func TestLists(t *testing.T) {
 	pwd := "/"
 	res, err := tClient.Lists(context.Background(), token, pwd)
 	if err != nil {
-		logger.GetLogger().Error(err.Error())
+		fmt.Println(err.Error())
 	}
-	logger.GetLogger().Info(fmt.Sprintf(res.String()))
+	fmt.Println(fmt.Sprintf(res.String()))
 	tTransport.Close()
 }
 
@@ -42,9 +49,9 @@ func TestDirAuth(t *testing.T) {
 	absPath := "/"
 	res, err := tClient.DirAuth(context.Background(), token, absPath)
 	if err != nil {
-		logger.GetLogger().Error(err.Error())
+		fmt.Println(err.Error())
 	}
-	logger.GetLogger().Info(fmt.Sprintf(res.String()))
+	fmt.Println(fmt.Sprintf(res.String()))
 	tTransport.Close()
 }
 
@@ -55,9 +62,9 @@ func TestFile(t *testing.T) {
 	fileName := "ocf1h-1.txt"
 	res, err := tClient.File(context.Background(), token, absPath, fileName)
 	if err != nil {
-		logger.GetLogger().Error(err.Error())
+		fmt.Println(err.Error())
 	}
-	logger.GetLogger().Info(fmt.Sprintf(res.String()))
+	fmt.Println(fmt.Sprintf(res.String()))
 	tTransport.Close()
 }
 
@@ -71,8 +78,8 @@ func TestSaveDownFileInfo(t *testing.T) {
 	token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEwNzE3ZmIwLTQ3YmQtNDdlNy1iMmJmLWFlN2RlMjM2MjhhYyIsInVzZXJuYW1lIjoidE5hbWUxIn0.LKoBOQkfc6_XtGrIPRAWgwUAkD1Zim7ltEzzdN5F0mQ"
 	res, err := tClient.SaveDownLoadFileInfo(context.Background(), token, apidown)
 	if err != nil {
-		logger.GetLogger().Error(err.Error())
+		fmt.Println(err.Error())
 	}
-	logger.GetLogger().Info(fmt.Sprintf(res.String()))
+	fmt.Println(fmt.Sprintf(res.String()))
 	tTransport.Close()
 }
