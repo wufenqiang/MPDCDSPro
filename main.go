@@ -8,6 +8,9 @@ import (
 
 func main() {
 	logger.GetLogger().Info("test")
+
 	fmt.Println("test")
+
 	client.Connect()
+
 }
