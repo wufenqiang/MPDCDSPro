@@ -18,7 +18,7 @@ func ProjectLocation(ProjectName string) string {
 		}
 		dir = filepath.Dir(dir)
 		if tmpdir == dir {
-			panic("无法找到本工程")
+			panic("无法找到" + ProjectName + "工程的根路径.")
 			break
 		} else {
 			tmpdir = dir
