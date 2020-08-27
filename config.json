@@ -2,7 +2,5 @@
   "ThriftHost":"127.0.0.1",
   "ThriftPort": "19090",
 
-  "LoggerLevel": "info",
-
-  "ShadeInLog":true
+  "LoggerLevel": "info"
 }

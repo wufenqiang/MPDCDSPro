@@ -12,9 +12,6 @@ type sysconfig struct {
 
 	//日志存储地址
 	LoggerLevel string `json:"LoggerLevel"`
-
-	//日志中显示相关密文
-	ShadeInLog bool `json:"ShadeInLog"`
 }
 
 var Sysconfig = &sysconfig{}
