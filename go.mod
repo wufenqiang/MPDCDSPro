@@ -1,4 +1,4 @@
-module MPDCDSPro
+module github.com/wufenqiang/MPDCDSPro
 
 go 1.14
 
