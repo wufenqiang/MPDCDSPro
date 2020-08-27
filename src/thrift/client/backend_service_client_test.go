@@ -1,10 +1,10 @@
 package client
 
 import (
-	"220.243.129.233/wufenqiang/MPDCDSPro/src/logger"
-	"220.243.129.233/wufenqiang/MPDCDSPro/src/thrift/MPDCDS_BackendService"
 	"context"
 	"fmt"
+	"github.com/wufenqiang/MPDCDSPro/src/logger"
+	"github.com/wufenqiang/MPDCDSPro/src/thrift/MPDCDS_BackendService"
 	"testing"
 	"time"
 )

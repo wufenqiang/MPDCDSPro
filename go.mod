@@ -1,4 +1,4 @@
-module 220.243.129.233/wufenqiang/MPDCDSPro
+module github.com/wufenqiang/MPDCDSPro
 
 go 1.14
 
