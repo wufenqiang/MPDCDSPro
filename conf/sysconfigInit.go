@@ -1,6 +1,7 @@
 package conf
 
 import (
+	"github.com/json-iterator/go"
 	"io/ioutil"
 	"os"
 	"path/filepath"

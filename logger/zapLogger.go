@@ -1,7 +1,8 @@
 package logger
 
 import (
-	"MPDCDSPro/conf"
+	"github.com/lestrrat-go/file-rotatelogs"
+	"github.com/wufenqiang/MPDCDSPro/conf"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"io"
