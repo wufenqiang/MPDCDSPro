@@ -7,8 +7,6 @@ import (
 	"time"
 )
 
-var Sysconfig = &sysconfig{}
-
 func ReadConf(conffile string, thesysconf interface{}) {
 	//指定对应的json配置文件
 	b, err := ioutil.ReadFile(conffile)

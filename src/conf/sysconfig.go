@@ -10,6 +10,8 @@ type sysconfig struct {
 	LoggerLevel string `json:"LoggerLevel"`
 }
 
+var Sysconfig = &sysconfig{}
+
 func init() {
 	dir := LocalProjectPath()
 	conffile := dir + "/config.json"
