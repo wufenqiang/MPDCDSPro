@@ -1,15 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"github.com/wufenqiang/MPDCDSPro/src/logger"
-)
+import "github.com/wufenqiang/MPDCDSPro/src/thrift/client"
 
 func main() {
-	logger.GetLogger().Info("test")
-
-	fmt.Println("test")
-
-	//client.Connect()
+	//fmt.Println("test")
+	client.ConnectHostPort("127.0.0.1:19090")
 
 }
