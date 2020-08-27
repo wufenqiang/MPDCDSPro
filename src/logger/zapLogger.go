@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"220.243.129.233/wufenqiang/MPDCDSPro/conf"
+	"220.243.129.233/wufenqiang/MPDCDSPro/src/conf"
 	"github.com/lestrrat-go/file-rotatelogs"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -96,8 +96,10 @@ func getWriter(FilePathName string) io.Writer {
 func init() {
 	//logpath:=path.Join(conf.Sysconfig.LoggerPath,conf.Sysconfig.ProjectName)
 	//logger := InitLog(logpath, conf.Sysconfig.LoggerLevel)
+	//logpath:=conf.Sysconfig.LoggerPath
+	logpath := conf.LocalProjectPath() + "/logs/" + conf.ProjectName + "/"
 
-	logger := InitLog(conf.Sysconfig.LoggerPath, conf.Sysconfig.LoggerLevel)
+	logger := InitLog(logpath, conf.Sysconfig.LoggerLevel)
 
 	//logger.Info("Logger init......\r\n")
 	logger.Info("Logger init......")

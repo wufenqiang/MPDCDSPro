@@ -1,9 +1,9 @@
 package client
 
 import (
-	"220.243.129.233/wufenqiang/MPDCDSPro/conf"
-	"220.243.129.233/wufenqiang/MPDCDSPro/logger"
-	"220.243.129.233/wufenqiang/MPDCDSPro/thrift/MPDCDS_BackendService"
+	"220.243.129.233/wufenqiang/MPDCDSPro/src/conf"
+	"220.243.129.233/wufenqiang/MPDCDSPro/src/logger"
+	"220.243.129.233/wufenqiang/MPDCDSPro/src/thrift/MPDCDS_BackendService"
 	"fmt"
 	"git.apache.org/thrift.git/lib/go/thrift"
 	"go.uber.org/zap"
