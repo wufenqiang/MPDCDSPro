@@ -13,6 +13,11 @@ import (
 
 //创建客户端连接，获取连接对象
 func Connect() (*MPDCDS_BackendService.MPDCDS_BackendServiceClient, thrift.TTransport) {
+	thrifthostport := net.JoinHostPort(conf.Sysconfig.ThriftHost, conf.Sysconfig.ThriftPort)
+	logger.GetLogger().Info("Default Thrift Host Port:" + thrifthostport)
+	return ConnectHostPort(thrifthostport)
+}
+func ConnectHostPort(hostport string) (*MPDCDS_BackendService.MPDCDS_BackendServiceClient, thrift.TTransport) {
 	protocolFactory := thrift.NewTBinaryProtocolFactoryDefault()
 	transport, err := thrift.NewTSocket(net.JoinHostPort(conf.Sysconfig.ThriftHost, conf.Sysconfig.ThriftPort))
 	if err != nil {
