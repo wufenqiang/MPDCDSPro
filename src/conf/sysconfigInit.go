@@ -2,52 +2,21 @@ package conf
 
 import (
 	"github.com/json-iterator/go"
+	"github.com/wufenqiang/MPDCDSPro/src/utils"
 	"io/ioutil"
-	"os"
-	"path/filepath"
-	"strings"
 )
 
-var Sysconfig = &sysconfig{}
-
-func init() {
-	//dir, _ := os.Getwd()
-	//for {
-	//	if strings.HasSuffix(dir, ProjectName) {
-	//		pdir := filepath.Dir(dir)
-	//		if pdir != "thrift" {
-	//			break
-	//		}
-	//	}
-	//	dir = filepath.Dir(dir)
-	//}
-	//fmt.Println(dir)
-
-	dir := LocalProjectPath()
-
-	conffile := dir + "/config.json"
-
+func ReadConf(conffile string) {
 	//指定对应的json配置文件
 	b, err := ioutil.ReadFile(conffile)
 	if err != nil {
-		panic("Sys config read err")
+		panic(conffile + "Sys config read err")
 	}
 	err = jsoniter.Unmarshal(b, Sysconfig)
 	if err != nil {
 		panic(err)
 	}
 }
-
 func LocalProjectPath() string {
-	dir, _ := os.Getwd()
-	for {
-		if strings.HasSuffix(dir, ProjectName) {
-			pdir := filepath.Dir(dir)
-			if pdir != "thrift" {
-				break
-			}
-		}
-		dir = filepath.Dir(dir)
-	}
-	return dir
+	return utils.ProjectLocation(ProjectName)
 }

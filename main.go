@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"github.com/wufenqiang/MPDCDSPro/src/logger"
-	"github.com/wufenqiang/MPDCDSPro/src/thrift/client"
 )
 
 func main() {
@@ -11,6 +10,6 @@ func main() {
 
 	fmt.Println("test")
 
-	client.Connect()
+	//client.Connect()
 
 }
